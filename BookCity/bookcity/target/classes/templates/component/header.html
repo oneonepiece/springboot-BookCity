@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<html lang="en">
+
+
+<th:block th:fragment="header-file">
+
+<!--<link rel="stylesheet" href="/plugins/bootstrap/css/bootstrap.min.css">-->
+    <script src="/project/js/search.js"></script>
+
+</th:block>
+
+
+<!-- Navbar -->
+<th:block th:fragment="header-nav">
+
+<nav class="navbar navbar-default" role="navigation" >
+    <div class="navbar-header">
+        <!--<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">-->
+        <!--&lt;!&ndash;<span class="sr-only">Toggle navigation</span><span class="icon-bar"></span>&ndash;&gt;-->
+        <!--&lt;!&ndash;<span class="icon-bar"></span><span class="icon-bar"></span>-->
+        <!--&ndash;&gt;-->
+        <!--</button>-->
+        <a class="navbar-brand" href="/">书城Logo</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+            <th:block th:if="${null != user}">
+                <li class="">
+                    <a href="/user/cart">我的购物车</a>
+                </li>
+                <li>
+                    <a href="/user/order">我的订单</a>
+                </li>
+            </th:block>
+        </ul>
+
+        <ul class="nav navbar-nav navbar-right">
+            <th:block th:if="${null == user}">
+                <li id="login-li">
+                    <a href="/login" > 登录 </a>
+                </li>
+            </th:block>
+
+            <th:block th:if="${null != user}">
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        <th:block th:text="${user}"></th:block>
+                        <strong class="caret"></strong></a>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a href="#">用户中心</a>
+                        </li>
+                        <li class="divider">
+                        </li>
+                        <li>
+                            <a href="#">修改密码</a>
+                        </li>
+                        <li class="divider">
+                        </li>
+                        <li>
+                            <a href="/logout">退出登录</a>
+                        </li>
+
+                    </ul>
+                </li>
+            </th:block>
+
+        </ul>
+
+        <form class="navbar-form navbar-right" role="search" onclick="return false">
+            <div class="form-group">
+                <input type="text" class="form-control" placeholder="输入书名" id="bc-search-value" />
+            </div> <button  class="btn btn-default" id="bc-search">搜索</button>
+        </form>
+    </div>
+
+</nav>
+
+</th:block>
+
+<!-- /.navbar -->
+</html>

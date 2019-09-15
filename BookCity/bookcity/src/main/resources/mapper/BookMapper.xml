@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+        <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lin.shiro.core.dao.BookMapper">
+
+<resultMap id="BookBaseMap" type="com.lin.shiro.core.entity.Book">
+    <id column="b_id" jdbcType="BIGINT" property="b_id"/>
+    <result column="b_name" jdbcType="VARCHAR" property="b_name"/>
+    <result column="author" jdbcType="VARCHAR" property="author"/>
+    <result column="price" jdbcType="DOUBLE" property="price"/>
+    <result column="curr_price" jdbcType="DOUBLE" property="curr_price"/>
+    <result column="discount" jdbcType="DOUBLE" property="discount"/>
+    <result column="press" jdbcType="VARCHAR" property="press"/>
+    <result column="publish_time" jdbcType="TIMESTAMP" property="publish_time"/>
+
+    <result column="edition" jdbcType="BIGINT" property="edition"/>
+    <result column="page_num" jdbcType="BIGINT" property="page_num"/>
+    <result column="word_num" jdbcType="BIGINT" property="word_num"/>
+    <result column="print_time" jdbcType="TIMESTAMP" property="print_time"/>
+    <result column="book_size" jdbcType="BIGINT" property="book_size"/>
+    <result column="paper" jdbcType="VARCHAR" property="paper"/>
+    <result column="image_uri" jdbcType="VARCHAR" property="image_uri"/>
+    <result column="order_by" jdbcType="BIGINT" property="order_by"/>
+    <result column="classify_id" jdbcType="BIGINT" property="classify_id"/>
+    <result column="isbn" jdbcType="VARCHAR" property="isbn"/>
+
+    <result column="book_num" jdbcType="VARCHAR" property="book_num"/>
+    <result column="status" jdbcType="BIGINT" property="status"/>
+
+</resultMap>
+
+  <sql id="Base_Column_List">
+    b_id,book_num,b_name,author,price,curr_price,discount,press,publish_time,edition,page_num,word_num,
+    print_time,book_size,paper,image_uri,order_by,classify_id,isbn,status
+  </sql>
+
+  <insert id="insertBook" parameterType="com.lin.shiro.core.entity.Book">
+    insert into book (b_id,book_num,b_name,author,price,curr_price,discount,
+    press,publish_time,edition,page_num,word_num,
+    print_time,book_size,paper,image_uri,order_by,classify_id,isbn,status)
+    values (#{b_id,jdbcType=BIGINT},#{book_num,jdbcType=VARCHAR},#{b_name,jdbcType=VARCHAR},
+        #{author,jdbcType=VARCHAR},#{price,jdbcType=DOUBLE},
+        #{curr_price,jdbcType=DOUBLE},#{discount,jdbcType=DOUBLE},
+        #{press,jdbcType=VARCHAR},#{publish_time,jdbcType=TIMESTAMP},
+        #{edition,jdbcType=BIGINT},#{page_num,jdbcType=BIGINT},
+        #{word_num,jdbcType=BIGINT},#{print_time,jdbcType=TIMESTAMP},
+        #{book_size,jdbcType=BIGINT},#{paper,jdbcType=VARCHAR},
+        #{image_uri,jdbcType=VARCHAR},#{order_by,jdbcType=BIGINT},
+        #{classify_id,jdbcType=BIGINT},#{isbn,jdbcType=VARCHAR},#{status,jdbcType=BIGINT} )
+  </insert>
+
+
+        <!--1,8含义: 倒序,拿第1个以后的数据,拿8条-->
+        <!--SELECT * FROM book WHERE STATUS = 0 AND classify_id = 7 ORDER BY b_id DESC LIMIT 1,8-->
+        <select id="findBookList" parameterType="Map" resultMap="BookBaseMap">
+                select
+                <include refid="Base_Column_List"/>
+                from book
+                where status=0
+                <if test="keyword!=null">
+                        AND (b_name like CONCAT('%','${keyword}','%' ) or press like CONCAT('%','${keyword}','%' ))
+                </if>
+                <if test="classify_id > 0">
+                        AND classify_id = #{classify_id}
+                </if>
+                order by b_id desc
+                <if test="start!=null and limit!=null">
+                        limit #{start},#{limit}
+                </if>
+        </select>
+
+        <select id="getTotalBook" parameterType="Map" resultType="int">
+                select count(*) from book
+                where status=0
+                <if test="keyword!=null">
+                        AND (b_name like CONCAT('%','${keyword}','%' ) or press like CONCAT('%','${keyword}','%' ))
+                </if>
+                <if test="classify_id > 0">
+                        AND classify_id = #{classify_id}
+                </if>
+        </select>
+
+    <!--SELECT * FROM book WHERE b_id IN (1,2)-->
+    <select id="getBookById" parameterType="java.util.List" resultMap="BookBaseMap">
+        select * from book
+        <where>
+            b_id  IN
+            <foreach collection="bookids" item="item" index="index"  open="(" separator="," close=")" >
+                #{item}
+            </foreach>
+        </where>
+
+    </select>
+
+    <select id="getOneBook" parameterType="java.lang.Integer" resultMap="BookBaseMap">
+        select * from book where b_id = #{b_id}
+    </select>
+
+
+
+</mapper>

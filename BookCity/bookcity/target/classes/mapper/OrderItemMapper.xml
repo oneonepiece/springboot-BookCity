@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+        <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lin.shiro.core.dao.OrderItemMapper">
+
+<!--public int order_item_id;-->
+<!--public int quantity;-->
+<!--public double subtotal;-->
+<!--public int b_id;-->
+<!--public int o_id;-->
+
+<resultMap id="OrderItemBaseMap" type="com.lin.shiro.core.entity.OrderItem">
+    <id column="order_item_id" jdbcType="BIGINT" property="order_item_id"/>
+    <result column="quantity" jdbcType="BIGINT" property="quantity"/>
+    <result column="subtotal" jdbcType="DOUBLE" property="subtotal"/>
+    <result column="b_id" jdbcType="BIGINT" property="b_id"/>
+    <result column="o_id" jdbcType="BIGINT" property="o_id"/>
+
+</resultMap>
+
+<select id="getOrderItem" parameterType="java.lang.Integer" resultMap="OrderItemBaseMap">
+         select * from order_item where o_id = #{o_id}
+</select>
+
+<!--<insert id="insertOrderItem" parameterType="com.lin.shiro.core.entity.OrderItem">-->
+    <!--insert into-->
+             <!--`order` ( o_id,order_time,total,status,address,u_id,o_number )-->
+        <!--values (#{o_id,jdbcType=BIGINT}, #{order_time,jdbcType=TIMESTAMP}, #{total,jdbcType=DOUBLE},-->
+                  <!--#{status,jdbcType=TINYINT}, #{address,jdbcType=VARCHAR}, #{u_id,jdbcType=BIGINT},-->
+                  <!--#{o_number,jdbcType=VARCHAR}  )-->
+
+<!--</insert>-->
+
+    <!--将所有信息插入PP表里面，传入参数为list,通过<foreach>来遍历list-->
+    <insert id="insertOrderItem" parameterType="java.util.ArrayList">
+        insert into `order_item` ( quantity,subtotal,b_id,o_id ) VALUES
+        <foreach collection="orderItemList" item="item" index="index" separator=",">
+            (#{item.quantity,jdbcType=BIGINT}, #{item.subtotal,jdbcType=DOUBLE},
+            #{item.b_id,jdbcType=BIGINT},#{item.o_id,jdbcType=BIGINT}  )
+        </foreach>
+    </insert>
+
+
+
+</mapper>

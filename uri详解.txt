@@ -1,0 +1,40 @@
+
+/classify/**/**   书籍分类页
+
+/login  登录
+
+/register  注册
+
+/user/** user相关
+	/user/cart
+
+/admin/** admin相关
+
+/page/*  首页
+
+/notRolle  未授权
+
+/logout  退出登录
+
+/jquery/**  jquery静态文件
+
+/demo/**  静态文件
+
+/plugins/**  静态文件(插件)
+
+/mycookie   获取cookie状态(有废弃倾向)
+
+/api/**  测试用
+
+/api/cart/remove  删除购物车里的商品
+
+/api/cart/order   将购物车里的商品生成订单
+
+/api/cart/cutoradd   商品数量减或加   前端一些小细节没有弄
+
+/book/
+
+
+
+
+

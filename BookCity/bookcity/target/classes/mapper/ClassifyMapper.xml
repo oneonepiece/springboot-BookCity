@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lin.shiro.core.dao.ClassifyMapper">
+
+    <!--public int classify_id;-->
+    <!--public String classify_name;-->
+    <!--public String classify_desc;-->
+    <!--public int order_by;-->
+    <!--public int category_id;-->
+
+    <resultMap id="ClassifyBaseMap" type="com.lin.shiro.core.entity.Classify">
+        <id column="classify_id" jdbcType="BIGINT" property="classify_id"/>
+        <result column="classify_name" jdbcType="VARCHAR" property="classify_name"/>
+        <result column="classify_desc" jdbcType="VARCHAR" property="classify_desc"/>
+        <result column="order_by" jdbcType="BIGINT" property="order_by"/>
+        <result column="category_id" jdbcType="BIGINT" property="category_id"/>
+
+    </resultMap>
+
+    <!--SELECT * FROM classify WHERE category_id = 1-->
+    <select id="getClassify" parameterType="java.lang.Integer" resultMap="ClassifyBaseMap">
+          SELECT * FROM classify WHERE category_id = #{category_id}
+    </select>
+
+
+
+</mapper>
