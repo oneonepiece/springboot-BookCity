@@ -35,6 +35,27 @@
 /book/
 
 
+/admin/**
+	/admin/index 后台首页
+	/admin/categories  分类管理
+	/admin/orders   订单管理
+	/admin/merchandise  图书管理
+	
+	
+/role/api/**
+
+/role/api/addca
+/role/api/updca
+/role/api/remca
+/role/api/addcl
+/role/api/updcl
+/role/api/remcl
+
+		
+		
+		
+		
+
 
 
 

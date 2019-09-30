@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<header th:replace="admin/header::header-fragment"></header>
+<body class="hold-transition sidebar-mini">
+<div class="wrapper">
+    <!-- 引入页面头header-fragment -->
+    <div th:replace="admin/header::header-nav"></div>
+    <!-- 引入工具栏sidebar-fragment -->
+    <div th:replace="admin/sidebar::sidebar-fragment(${path})"></div>
+
+
+    <!-- 引入页脚footer-fragment -->
+    <div th:replace="admin/footer::footer-fragment"></div>
+</div>
+<!-- jQuery -->
+<script th:src="@{/admin/plugins/jquery/jquery.min.js}"></script>
+<!-- jQuery UI 1.11.4 -->
+<script th:src="@{/admin/plugins/jQueryUI/jquery-ui.min.js}"></script>
+<!-- Bootstrap 4 -->
+<script th:src="@{/admin/plugins/bootstrap/js/bootstrap.bundle.min.js}"></script>
+<!-- AdminLTE App -->
+<script th:src="@{/admin/dist/js/adminlte.min.js}"></script>
+</body>
+</html>

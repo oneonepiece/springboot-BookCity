@@ -3,6 +3,8 @@ package com.lin.shiro.core.dao;
 import com.lin.shiro.core.entity.Classify;
 import org.springframework.stereotype.Component;
 
+import java.util.ArrayList;
+
 /**
  * ClassifyMapper  功能描述
  *
@@ -17,5 +19,5 @@ import org.springframework.stereotype.Component;
 public interface ClassifyMapper {
 
 
-    Classify[] getClassify(int category_id);
+    ArrayList<Classify> getClassify(int category_id);
 }

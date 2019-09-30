@@ -43,12 +43,14 @@ public class IndexServiceImpl implements IndexService {
     @Override
     public List<Category> getCategory() {
         List<Category> categoryList = categoryMapper.getCategoryAll();
+        if (categoryList.size() == 0) return null;
         for (int i=0; i < categoryList.size(); i++){
             Category category =  categoryList.get(i);
-            Classify[] classifies =  classifyMapper.getClassify(category.category_id);
-            if (classifies.length > 0){
-                category.setClassifies(classifies);
+            ArrayList<Classify> classifies =  classifyMapper.getClassify(category.category_id);
+            if (classifies.size() < 1){
+                category.setClassifies(null);
             }
+            category.setClassifies(classifies);
         }
 
         return categoryList;

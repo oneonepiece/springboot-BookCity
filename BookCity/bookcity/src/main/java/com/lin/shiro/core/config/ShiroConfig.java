@@ -76,7 +76,7 @@ public class ShiroConfig {
 
 //            filterChainDefinitionMap.put("/front/**", "anon");//?
 
-
+            filterChainDefinitionMap.put("/role/**" , "authc");
             filterChainDefinitionMap.put("/api/**", "authc");
             filterChainDefinitionMap.put("/admin/**", "authc");
             filterChainDefinitionMap.put("/user/**", "authc");

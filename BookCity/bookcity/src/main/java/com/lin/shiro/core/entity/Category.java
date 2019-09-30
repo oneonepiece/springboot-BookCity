@@ -1,6 +1,7 @@
 package com.lin.shiro.core.entity;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 
 /**
  * Category  功能描述
@@ -25,7 +26,7 @@ public class Category implements Serializable {
     public String category_desc;
     public int order_by;
 
-    private Classify[] classifies;
+    public ArrayList<Classify> classifies;
 
     public Category(){}
 
@@ -61,11 +62,11 @@ public class Category implements Serializable {
         this.order_by = order_by;
     }
 
-    public Classify[] getClassifies() {
+    public ArrayList<Classify> getClassifies() {
         return classifies;
     }
 
-    public void setClassifies(Classify[] classifies) {
+    public void setClassifies(ArrayList<Classify> classifies) {
         this.classifies = classifies;
     }
 }
