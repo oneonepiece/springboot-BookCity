@@ -16,39 +16,35 @@
 
 ### 后台管理页面
 
-
 - 分类管理
 
 	![admin1](static-files/admin1.png)
   
-  - 图书管理
+- 图书管理
 
 	![admin2](static-files/admin2.png)
   
-  
   ### 前台展示页面
   
-  - 首页
+- 首页
 
-	  ![index](static-files/index.png)
+	![index](static-files/index.png)
     
-  - 展示页1
+- 展示页1
 
-	  ![img1](static-files/img1.png)
+	![img1](static-files/img1.png)
     
-  - 展示页2
+- 展示页2
 
-	  ![img2](static-files/img2.png)
-    
-    
-  - 展示页3
+	![img2](static-files/img2.png)
+       
+- 展示页3
 
-	  ![img3](static-files/img3.png)
+	![img3](static-files/img3.png)
         
   - 展示页4
 
-	  ![img4](static-files/img4.png)
-    
+	![img4](static-files/img4.png)
     
 ## 感谢
 
