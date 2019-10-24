@@ -3,13 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="1a8bf32f-0316-424b-9f57-3171d71447ef" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lin/shiro/core/config/ShiroConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lin/shiro/core/config/ShiroConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lin/shiro/core/dao/ClassifyMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lin/shiro/core/dao/ClassifyMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lin/shiro/core/entity/Category.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lin/shiro/core/entity/Category.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lin/shiro/core/service/impl/IndexServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lin/shiro/core/service/impl/IndexServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/error/error404.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/error/error404.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/error/error404.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/error/error404.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../uri详解.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../uri详解.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -129,19 +124,21 @@
     <session id="1581071909">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="15" />
-          <entry key="project.open.time.1" value="2" />
+          <entry key="project.closed" value="21" />
+          <entry key="project.open.time.1" value="4" />
           <entry key="project.open.time.13" value="1" />
           <entry key="project.open.time.14" value="1" />
+          <entry key="project.open.time.15" value="1" />
           <entry key="project.open.time.16" value="2" />
-          <entry key="project.open.time.17" value="2" />
+          <entry key="project.open.time.17" value="3" />
           <entry key="project.open.time.19" value="1" />
-          <entry key="project.open.time.20" value="2" />
+          <entry key="project.open.time.20" value="3" />
           <entry key="project.open.time.21" value="2" />
           <entry key="project.open.time.22" value="3" />
           <entry key="project.open.time.25" value="1" />
+          <entry key="project.open.time.4" value="1" />
           <entry key="project.open.time.5" value="1" />
-          <entry key="project.opened" value="18" />
+          <entry key="project.opened" value="24" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -151,11 +148,11 @@
           <entry key="dtd" value="1" />
           <entry key="fxml" value="1" />
           <entry key="html" value="123" />
-          <entry key="java" value="286" />
+          <entry key="java" value="287" />
           <entry key="jpg" value="1" />
           <entry key="js" value="7" />
           <entry key="png" value="4" />
-          <entry key="properties" value="4" />
+          <entry key="properties" value="5" />
           <entry key="ts" value="1" />
           <entry key="xml" value="94" />
         </counts>
@@ -167,9 +164,9 @@
           <entry key="DTD" value="1" />
           <entry key="HTML" value="123" />
           <entry key="Image" value="5" />
-          <entry key="JAVA" value="286" />
+          <entry key="JAVA" value="287" />
           <entry key="JavaScript" value="7" />
-          <entry key="Properties" value="4" />
+          <entry key="Properties" value="5" />
           <entry key="TypeScript" value="1" />
           <entry key="XML" value="95" />
         </counts>
@@ -181,7 +178,7 @@
           <entry key="html" value="11398" />
           <entry key="java" value="7009" />
           <entry key="js" value="104" />
-          <entry key="properties" value="9" />
+          <entry key="properties" value="10" />
           <entry key="xml" value="816" />
         </counts>
       </usages-collector>
@@ -191,7 +188,7 @@
           <entry key="HTML" value="11398" />
           <entry key="JAVA" value="7009" />
           <entry key="JavaScript" value="104" />
-          <entry key="Properties" value="9" />
+          <entry key="Properties" value="10" />
           <entry key="SQL" value="41" />
           <entry key="XML" value="776" />
         </counts>
@@ -262,7 +259,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/resources/mapper/ClassifyMapper.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/lin/shiro/core/util/PageResult.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/lin/shiro/core/util/PageQueryUtil.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/lin/shiro/core/controller/blog/IndexController.java" />
@@ -313,6 +309,7 @@
         <option value="$PROJECT_DIR$/src/main/resources/templates/admin/categories.html" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/admin/orders.html" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/admin/merchandise.html" />
+        <option value="$PROJECT_DIR$/src/main/resources/application.properties" />
       </list>
     </option>
   </component>
@@ -346,6 +343,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -473,210 +472,12 @@
               <item name="bookcity" type="b2602c69:ProjectViewProjectNode" />
               <item name="bookcity" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="mapper" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="bookcity" type="b2602c69:ProjectViewProjectNode" />
-              <item name="bookcity" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="bookcity" type="b2602c69:ProjectViewProjectNode" />
-              <item name="bookcity" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-              <item name="admin" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="bookcity" type="b2602c69:ProjectViewProjectNode" />
-              <item name="bookcity" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-              <item name="admin" type="462c0819:PsiDirectoryNode" />
-              <item name="dist" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="bookcity" type="b2602c69:ProjectViewProjectNode" />
-              <item name="bookcity" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-              <item name="admin" type="462c0819:PsiDirectoryNode" />
-              <item name="dist" type="462c0819:PsiDirectoryNode" />
-              <item name="css" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="bookcity" type="b2602c69:ProjectViewProjectNode" />
-              <item name="bookcity" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-              <item name="admin" type="462c0819:PsiDirectoryNode" />
-              <item name="dist" type="462c0819:PsiDirectoryNode" />
-              <item name="img" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="bookcity" type="b2602c69:ProjectViewProjectNode" />
-              <item name="bookcity" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-              <item name="admin" type="462c0819:PsiDirectoryNode" />
-              <item name="dist" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="bookcity" type="b2602c69:ProjectViewProjectNode" />
-              <item name="bookcity" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-              <item name="admin" type="462c0819:PsiDirectoryNode" />
-              <item name="plugins" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="bookcity" type="b2602c69:ProjectViewProjectNode" />
-              <item name="bookcity" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-              <item name="admin" type="462c0819:PsiDirectoryNode" />
-              <item name="plugins" type="462c0819:PsiDirectoryNode" />
-              <item name="bootstrap" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="bookcity" type="b2602c69:ProjectViewProjectNode" />
-              <item name="bookcity" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-              <item name="admin" type="462c0819:PsiDirectoryNode" />
-              <item name="plugins" type="462c0819:PsiDirectoryNode" />
-              <item name="bootstrap" type="462c0819:PsiDirectoryNode" />
-              <item name="css" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="bookcity" type="b2602c69:ProjectViewProjectNode" />
-              <item name="bookcity" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-              <item name="plugins" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="bookcity" type="b2602c69:ProjectViewProjectNode" />
-              <item name="bookcity" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-              <item name="plugins" type="462c0819:PsiDirectoryNode" />
-              <item name="bootstrap" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="bookcity" type="b2602c69:ProjectViewProjectNode" />
-              <item name="bookcity" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-              <item name="plugins" type="462c0819:PsiDirectoryNode" />
-              <item name="bootstrap" type="462c0819:PsiDirectoryNode" />
-              <item name="css" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="bookcity" type="b2602c69:ProjectViewProjectNode" />
-              <item name="bookcity" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-              <item name="plugins" type="462c0819:PsiDirectoryNode" />
-              <item name="bootstrap" type="462c0819:PsiDirectoryNode" />
-              <item name="css" type="462c0819:PsiDirectoryNode" />
-              <item name="bootstrap.css" type="620a8d5e:NestingTreeNode" />
-            </path>
-            <path>
-              <item name="bookcity" type="b2602c69:ProjectViewProjectNode" />
-              <item name="bookcity" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="bookcity" type="b2602c69:ProjectViewProjectNode" />
-              <item name="bookcity" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="bookcity" type="b2602c69:ProjectViewProjectNode" />
-              <item name="bookcity" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-              <item name="admin" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="bookcity" type="b2602c69:ProjectViewProjectNode" />
-              <item name="bookcity" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-              <item name="anyone" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="bookcity" type="b2602c69:ProjectViewProjectNode" />
-              <item name="bookcity" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-              <item name="authen" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="bookcity" type="b2602c69:ProjectViewProjectNode" />
-              <item name="bookcity" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-              <item name="error" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="bookcity" type="b2602c69:ProjectViewProjectNode" />
-              <item name="bookcity" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="test" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -688,7 +489,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1568997065416" />
-    <property name="last_opened_file_path" value="K:/GIT/springcloud/project/clouddo" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../springbootAndCUI/code-generator/code-generator-api" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Libraries" />
@@ -697,12 +498,12 @@
     <property name="settings.editor.selected.configurable" value="project.propCompiler" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="G:\Gits\springbootAndBookCity\BookCity\bookcity\src\main\resources\templates\admin" />
-      <recent name="G:\Gits\springbootAndBookCity\BookCity\bookcity\src\main\resources\static\admin\dist\img" />
-      <recent name="G:\Gits\springbootAndBookCity\BookCity\bookcity\src\main\resources\static\admin\plugins" />
-      <recent name="G:\Gits\springbootAndBookCity\BookCity\bookcity\src\main\resources\static\admin\dist\fonts" />
-      <recent name="G:\Gits\springbootAndBookCity\BookCity\bookcity\src\main\resources\static" />
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="G:\Gits\springbootAndBookCity\BookCity\bookcity\src\main\resources\templates\authen" />
+      <recent name="G:\Gits\springbootAndBookCity\BookCity\bookcity\src\main\java\com\lin\shiro\core\controller" />
+      <recent name="G:\Gits\springbootAndBookCity\BookCity\bookcity\src\main\resources\static\demo" />
+      <recent name="G:\Gits\springbootAndBookCity\BookCity\bookcity\src\main\resources\templates" />
+      <recent name="G:\Gits\springbootANDshiro\shiro\src\main\resources\static" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.lin.shiro.code.controller.blog" />
@@ -711,12 +512,12 @@
       <recent name="com.lin.shiro.code.service" />
       <recent name="com.lin.shiro.code.realm" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="G:\Gits\springbootAndBookCity\BookCity\bookcity\src\main\resources\templates\authen" />
-      <recent name="G:\Gits\springbootAndBookCity\BookCity\bookcity\src\main\java\com\lin\shiro\core\controller" />
-      <recent name="G:\Gits\springbootAndBookCity\BookCity\bookcity\src\main\resources\static\demo" />
-      <recent name="G:\Gits\springbootAndBookCity\BookCity\bookcity\src\main\resources\templates" />
-      <recent name="G:\Gits\springbootANDshiro\shiro\src\main\resources\static" />
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="G:\Gits\springbootAndBookCity\BookCity\bookcity\src\main\resources\templates\admin" />
+      <recent name="G:\Gits\springbootAndBookCity\BookCity\bookcity\src\main\resources\static\admin\dist\img" />
+      <recent name="G:\Gits\springbootAndBookCity\BookCity\bookcity\src\main\resources\static\admin\plugins" />
+      <recent name="G:\Gits\springbootAndBookCity\BookCity\bookcity\src\main\resources\static\admin\dist\fonts" />
+      <recent name="G:\Gits\springbootAndBookCity\BookCity\bookcity\src\main\resources\static" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -807,16 +608,22 @@
       <workItem from="1569032300005" duration="4597000" />
       <workItem from="1569120657004" duration="3534000" />
       <workItem from="1569392768997" duration="1318000" />
+      <workItem from="1571292752420" duration="612000" />
+      <workItem from="1571374036916" duration="37000" />
+      <workItem from="1571388633367" duration="1721000" />
+      <workItem from="1571553519397" duration="673000" />
+      <workItem from="1571799107957" duration="643000" />
+      <workItem from="1571891011609" duration="642000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="412233000" />
+    <option name="totallyTimeSpent" value="416561000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49706745" visible="true" weight="0.20911528" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49706745" visible="true" weight="0.22520107" />
       <window_info id="Structure" order="1" sideWeight="0.50293255" side_tool="true" weight="0.22252011" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -827,7 +634,7 @@
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32844576" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.31185943" />
-      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49932975" weight="0.37683284" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49932975" weight="0.5557185" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -982,9 +789,6 @@
           <caret line="39" lean-forward="true" selection-start-line="39" selection-end-line="39" />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
-      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/lin/shiro/core/config/InitConfig.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -1200,9 +1004,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="112">
+          <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/lin/shiro/core/BookCityApplication.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
+        <state relative-caret-position="321">
           <caret line="15" selection-start-line="15" selection-end-line="15" />
         </state>
       </provider>
