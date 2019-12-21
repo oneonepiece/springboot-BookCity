@@ -65,7 +65,7 @@ public class IndexController {
     public String goPageURI (@PathVariable("id") int id  , HttpServletRequest request ){
 
         Subject subject = SecurityUtils.getSubject();
-        //开发避免每次登陆,在访问index的时候就给其登陆先
+       // 开发避免每次登陆,在访问index的时候就给其登陆先
         UsernamePasswordToken token = new UsernamePasswordToken("user1","123");
         //认证登录
         subject.login(token);

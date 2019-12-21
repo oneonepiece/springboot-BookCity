@@ -1,5 +1,7 @@
 package com.lin.shiro.core.util;
 
+import org.springframework.util.StringUtils;
+
 import java.util.LinkedHashMap;
 import java.util.Map;
 
@@ -21,7 +23,10 @@ public class PageQueryUtil extends LinkedHashMap<String, Object> {
         //分页参数
         this.page = Integer.parseInt(params.get("page").toString());
         this.limit = Integer.parseInt(params.get("limit").toString());
-        this.classify_id = (Integer)params.get("classify_id");
+
+        if (!StringUtils.isEmpty(params.get("classify_id"))){
+            this.classify_id = (Integer)params.get("classify_id");
+        }
         this.put("start", (page - 1) * limit);
         this.put("page", page);
         this.put("limit", limit);

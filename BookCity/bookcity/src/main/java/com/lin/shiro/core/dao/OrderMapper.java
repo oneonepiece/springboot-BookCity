@@ -3,6 +3,7 @@ package com.lin.shiro.core.dao;
 import com.lin.shiro.core.entity.Order;
 import org.springframework.stereotype.Component;
 
+import java.util.HashMap;
 import java.util.List;
 
 /**
@@ -24,5 +25,7 @@ public interface OrderMapper {
     List<Order> getOrderByUserId(int u_id);
 
     int insertOrder(Order order);
+
+    List<Order> findOrder(HashMap map);  //admin 查询订单方法
 
 }

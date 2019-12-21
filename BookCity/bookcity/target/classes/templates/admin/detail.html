@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <title>后台书籍详细管理</title>
+    <!-- Bootstrap 3.3.7 -->
+    <link rel="stylesheet" href="/plugins/bootstrap/css/bootstrap.min.css">
+    <!-- 引入header-file -->
+    <th:block th:replace="admin/component/booklistheader::header-file"></th:block>
+
+</head>
+
+<body>
+
+<div class="container">
+    <div class="row clearfix">
+        <div class="col-md-12 column">
+            <!-- 引入页面头header-fragment -->
+            <div th:replace="admin/component/booklistheader::header-nav"></div>
+
+        </div>
+    </div>
+
+    <th:block th:if="${null != book}">
+    <div class="row">
+
+        <div class="col-md-4 col-sm-4 col-xs-6" style="padding-right:0px;">
+
+
+            <!-- 1 -->
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="thumbnail">
+                    <img th:src="${book.image_uri}" alt=""  class="img-responsive" style="width: 90%;height: 90%;">
+                    <!--width: 180px;height:180px-->
+
+                </div>
+            </div>
+
+        </div>
+
+        <div class="col-md-8 col-sm-8 col-xs-6">
+
+            <!-- 1 -->
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="thumbnail" style="border: 0px;">
+                    <p>商品编号:<th:block th:text="${book.book_num}"></th:block></p>
+
+                    <div class="caption">
+
+                        <div style="width:206px;height: 64px;">
+                            <div style="font-size: 30px;color: #e52222;">
+                                <p style="color: #8f8f8f;font-weight: normal!important;font-size: 12px!important; margin: 0;padding: 0;">
+                                    单价</p>
+                                <p style="font-weight: bold;">
+                                    <span style="    font-size: 14px;">￥</span>
+                                    <th:block th:text="${book.curr_price}"></th:block>
+                                </p>
+                            </div>
+                        </div>
+
+                        <!--<h4> 单价:</h4>-->
+                        <!--<h3 style="color: red; font-weight: bold;">￥40.5</h3>-->
+                        <h4>书名:<th:block th:text="${book.b_name}"></th:block></h4>
+                        <p> 作者:<th:block th:text="${book.author}"></th:block> </p>
+                        <p> 出版社:<th:block th:text="${book.press}"></th:block></p>
+                        <p> 出版时间:<th:block th:text="${#dates.format(book.publish_time,'yyyy-MM-dd')}"></th:block></p>
+
+                        <div class="row">
+                            <div class="col-md-4">
+                                <th>版次:<th:block th:text="${book.edition}"></th:block></th>
+                            </div>
+                            <div class="col-md-4">
+                                <th>页数:<th:block th:text="${book.page_num}"></th:block></th>
+                            </div>
+                            <div class="col-md-4">
+                                <th>字数:<th:block th:text="${book.word_num}"></th:block></th>
+                            </div>
+
+                        </div>
+
+                        <p></p>
+
+                        <div class="row">
+                            <div class="col-md-4">
+                                <th>印刷时间:<th:block th:text="${#dates.format(book.print_time,'yyyy-MM-dd')}"></th:block>
+                            </div>
+                            <div class="col-md-4">
+                                <th>开本:<th:block th:text="${book.book_size}"></th:block>开</th>
+                            </div>
+                            <div class="col-md-4">
+                                <th>纸张:<th:block th:text="${book.paper}"></th:block></th>
+                            </div>
+                        </div>
+
+                        <div class="row" style="margin-top: 20px;">
+                            <div class="col-md-12">
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">
+                                        <div class="row" style="padding-bottom: 20px;">
+                                            <div class="col-md-12" style="margin-top: 20px;">
+                                                <div class="row">
+                                                    <div class="col-lg-3">
+
+                                                        <!--<div class="input-group" style="width: 110px;">-->
+                                                            <!--<span class="input-group-btn">-->
+                                                                <!--<button class="btn btn-default" type="button" id="btn-cut">-</button>-->
+                                                            <!--</span>-->
+                                                            <!--<input type="text" id="b-quantity" class="form-control" placeholder="1" value="1">-->
+                                                            <!--<span class="input-group-btn">-->
+                                                                <!--<button class="btn btn-default" type="button" id="btn-add">+</button>-->
+                                                            <!--</span>-->
+                                                        <!--</div>-->
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12" >
+
+                                                <!--<button id="btn_edit" type="button" th:value="${book.b_id}" class="btn btn-success">-->
+                                                    <!--编辑-->
+                                                <!--</button>-->
+
+                                                <button id="btn_status" th:value="${book.status}" type="button" class="btn btn-success" >
+                                                    <th:block th:text="${status}"></th:block>
+                                                </button>
+                                                <button id="btn_book_remove" th:value="${book.b_id}" type="button" class="btn btn-success" style="margin-left: 30px;" >
+                                                    删除
+                                                </button>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+    </th:block>
+
+</div> <!--end row-->
+
+
+</div>
+
+
+<!-- jQuery 3 -->
+<script src="/jquery/jquery.min.js"></script>
+<!-- Bootstrap 3.3.7 -->
+<script src="/plugins/bootstrap/js/bootstrap.min.js"></script>
+
+<script>
+
+
+
+    //功能暂未上线
+    // $('#btn_edit').click(function () {
+    //
+    // });
+
+    dataRequest = function(id , value){
+
+        var id = Number(id);
+        var val = -1;
+        //value为空表示删除
+        if (value != null){
+            val = Number(value);
+        }
+        var dataJson =  JSON.stringify({bookId : id , status : val });
+
+        $.ajax(
+            {
+                type: "POST" ,
+                url:"/admin/book/code",
+                dataType: "JSON",
+                contentType: "application/json",
+                data:dataJson,
+                success:function(result){
+                    //200 改变状态成功, 201 删除成功?
+                    if (result.resultCode == 200) {
+                        // console.log(result.message());
+                        // var  me = result.message;
+                        // console.log(result.data);
+                        // alert(me.toString());
+                        var val = 0 ,text = "下架";
+                        var status = $('#btn_status');
+                        var statusValue = status.attr("value");
+
+                        if( Number(statusValue) == 0){
+                            val = 1;
+                            text = "上架";
+                        }
+                        status.attr("value" , val);
+                        status.text(text);
+                        alert("已" + (text == "上架"?"下架":"上架"));
+
+                    }else if (result.resultCode == 201){
+                        alert("已删除!");
+                    } else {
+                        alert(result.message.toString());
+                    }
+                }
+            });
+    }
+
+
+    $(document).ready(function (){
+
+        $('#btn_status').click(function () {
+            var newStatus = 0;
+            var status = $(this).attr('value');
+            if (Number(status) == 0) {
+                newStatus = 1;
+            }
+            var id = $('#btn_book_remove').attr('value');
+            dataRequest(id,newStatus);
+
+        });
+
+        $('#btn_book_remove').click(function () {
+            var id = $(this).attr('value');
+            dataRequest(id,null);
+        });
+    });
+
+</script>
+
+</body>
+
+</html>

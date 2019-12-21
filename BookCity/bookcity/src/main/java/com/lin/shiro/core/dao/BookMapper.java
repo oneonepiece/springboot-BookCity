@@ -33,6 +33,8 @@ public interface BookMapper {
 
     Book getOneBook(int b_id);
 
+    int updataBook(HashMap<String , Object> hashMap);
+
 //    1、MyBatis 通过包含的jdbcType类型
 //
 //    BIT、FLOAT、CHAR 、TIMESTAMP 、 OTHER 、UNDEFINEDTINYINT 、

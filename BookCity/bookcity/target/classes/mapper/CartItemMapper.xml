@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lin.shiro.core.dao.CartItemMapper">
+
+    <!--private int cart_item_id;-->
+    <!--private int quantity;-->
+    <!--private int b_id;-->
+    <!--private int u_id;-->
+    <!--private int order_by;-->
+
+    <resultMap id="CartItemBaseMap" type="com.lin.shiro.core.entity.CartItem">
+        <id column="cart_item_id" jdbcType="BIGINT" property="cart_item_id"/>
+        <result column="quantity" jdbcType="BIGINT" property="quantity"/>
+        <result column="b_id" jdbcType="BIGINT" property="b_id"/>
+        <result column="u_id" jdbcType="BIGINT" property="u_id"/>
+        <result column="order_by" jdbcType="BIGINT" property="order_by"/>
+
+    </resultMap>
+
+    <select id="getCart" parameterType="java.lang.Integer" resultMap="CartItemBaseMap">
+        select * from cart_item where u_id = #{u_id}
+    </select>
+
+    <!--SELECT * FROM  cart_item WHERE u_id = 26 AND b_id IN (3,5)-->
+    <select id="getCartItem"  resultMap="CartItemBaseMap">
+        select * from cart_item
+          where
+        <if test="userId!=null">
+            u_id = #{userId}
+        </if>
+        <if test="bookId!=null">
+               AND b_id  IN
+                <foreach collection="bookId" item="item" index="index"  open="(" separator="," close=")" >
+                    #{item}
+                </foreach>
+        </if>
+
+    </select>
+
+    <delete id="removeCartItem">
+        delete  from cart_item
+        where
+        <if test="userId!=null">
+            u_id = #{userId}
+        </if>
+        <if test="bookId!=null">
+            AND b_id  IN
+            <foreach collection="bookId" item="item" index="index"  open="(" separator="," close=")" >
+                #{item}
+            </foreach>
+        </if>
+    </delete>
+
+
+
+</mapper>

@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Order详情</title>
+
+    <!-- Bootstrap 3.3.7 -->
+    <link rel="stylesheet" href="/plugins/bootstrap/css/bootstrap.min.css">
+    <!-- 引入header-file -->
+    <th:block th:replace="admin/component/booklistheader::header-file"></th:block>
+    <!-- jQuery 3 -->
+    <script src="/jquery/jquery.min.js"></script>
+    <!-- Bootstrap 3.3.7 -->
+    <script src="/plugins/bootstrap/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+
+<div class="container">
+    <div class="row clearfix">
+        <div class="col-md-12 column">
+
+            <!-- 引入页面头header-fragment -->
+            <div th:replace="admin/component/booklistheader::header-nav"></div>
+
+        </div>
+    </div>
+
+
+    <th:block th:if="${null != total}">
+
+    <div class="table-responsive m-t">
+        <table class="table invoice-table">
+            <thead>
+            <tr>
+
+                <th style="width: 120px;">
+                    图片
+                </th>
+                <th style="width: 350px;">商品名称</th>
+                <th style="width: 120px;">数量</th>
+                <th style="width: 120px;">单价</th>
+                <!--<th>税率</th>-->
+                <th style="width: 120px;">总价</th>
+            </tr>
+            </thead>
+            <tbody>
+
+
+            <!-- 页面数据 -->
+            <th:block th:if="${null != bookList}">
+                <th:block th:each="book : ${bookList}">
+
+                    <tr>
+
+                        <td>
+                            <img th:src="@{${book.image_uri}}" alt=""  class="img-responsive" style="width: 100px;height: 100px;">
+                        </td>
+
+                        <td>
+                            <div><strong>
+                                <th:block th:text="${book.b_name}"></th:block>
+                            </strong>
+                            </div>
+                        </td>
+
+
+                <!-- 页面数据 -->
+                <th:block th:each="orderit : ${orderItem}">
+                    <th:block th:if="${book.b_id == orderit.b_id}">
+                        <td>
+                            <th:block th:text="${orderit.quantity}"></th:block>
+                        </td>
+                        <td >
+                            <div style="margin-top: 43px;" >
+                                &yen;<th:block th:text="${book.curr_price}"></th:block>
+                            </div>
+                        </td>
+                        <td >
+                            <div style="margin-top: 43px;" >
+                                &yen;<th:block th:text="${(book.curr_price * orderit.quantity) }"></th:block>
+                            </div>
+                        </td>
+                    </th:block>
+                </th:block>
+
+                    </tr>
+
+                </th:block>
+            </th:block>
+
+            </tbody>
+        </table>
+    </div>
+    <!-- /table-responsive -->
+
+    <table class="table invoice-total">
+        <tbody>
+
+        <tr>
+
+            <td style="width: 55px;">
+                <strong style="font-size: 15px; display: block;margin-top: 5px;">总计:</strong>
+            </td>
+            <td style="font-size: 20px;color: red;font-weight: bold;width: 200px;">
+                <div style="">
+                    &yen;<th:block th:text="${total}"></th:block>
+                </div>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+
+    <th:block th:if="${1 == order.status}">
+    <table class="table invoice-total">
+        <tbody>
+        <tr>
+            <td>
+
+                <div class="input-group">
+                    <span class="input-group-addon" id="sizing-addon2">收货地址</span>
+                    <input type="text" class="form-control" th:value="${address}"
+                           placeholder="收货地址" aria-describedby="sizing-addon2">
+                </div>
+
+            </td>
+
+        </tr>
+        </tbody>
+    </table>
+    </th:block>
+
+    <div class="text-right">
+
+        <button class="btn btn-primary "  id="btn-return-order" style="width: 100px;">
+            返回
+        </button>
+
+        <th:block th:if="${1 == order.status}">
+            <!-- 按钮触发模态框   data-toggle="modal" data-target="#myModal"  -->
+            <button class="btn btn-primary " id="btn-sub"  style="width: 100px;margin-left: 30px;">
+                确认并支付
+            </button>
+        </th:block>
+        <th:block th:if="${0 == order.status}">
+            <!-- 按钮触发模态框   data-toggle="modal" data-target="#myModal"  -->
+            <button class="btn btn-primary " id="btn-sub"  style="width: 100px;margin-left: 30px;">
+                退货
+            </button>
+        </th:block>
+
+    </div>
+
+
+    </th:block>
+    <div class="well m-t" style="margin-top: 20px;"><strong>注意：</strong> 请在30日内完成付款，否则订单会自动取消。
+    </div>
+</div>
+
+
+
+</div>
+
+<script>
+    // $("#btn-sub").click(function () {
+    //
+    //     alert("点击了");
+    // });
+
+    //在调用modal方法之前也可以动态修改.modal-body的内容及其他信息，
+    //这样就可以实现动态弹出不同的模态框
+
+    // $('button').on('click',function(){
+    //     $('#myModal').modal('show');
+    // });
+
+    // data-dismiss='modal'让Close可以调用$('#myModal').modal('hide');
+    // 也可以在Save changes上添加
+
+
+    $('#btn-return-order').click(function () {
+        location.href = "/admin/user/order";
+    });
+
+    $('#btn-sub').on('click',function(){
+
+        // $('#myModal').modal('show');
+        // $('#myModal').modal('hide');
+    });
+
+    $(document).ready(function (){
+        proSearch();
+    });
+
+</script>
+
+
+</body>
+</html>
+
+

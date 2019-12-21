@@ -55,6 +55,26 @@ public class Book implements Serializable {
     public String isbn;
     public int status; //书籍状态,上架 0 下架1
 
+    public Book(String bookName, double bookPrice,double bookDiscount,
+                double bookCurrPrice,String bookAuthor, String bookPress,
+                Date bookPublishTime,Date bookPrintTime, int bookEdition,
+                int bookSize, String bookPaper, int bookPageNum, int bookWordNum)
+    {
+        this.b_name = bookName; //书名
+        this.author = bookAuthor; //作者
+        this.price = bookPrice; //价格
+        this.curr_price = bookCurrPrice; //当前价格
+        this.discount = bookDiscount; //折扣
+        this.press = bookPress; //出版社?
+        this.publish_time = bookPublishTime; //发布时间
+        this.edition = bookEdition; //版号?版次?
+        this.page_num = bookPageNum; //页数
+        this.word_num = bookWordNum; //字数
+        this.print_time = bookPrintTime; //印刷时间?
+        this.book_size = bookSize; //书籍大小? 开本16开
+        this.paper = bookPaper; //纸? 书籍纸张类型
+
+    }
 
     public Book(){ }
 

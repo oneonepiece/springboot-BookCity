@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8">
+		<title>书城后台页</title>
+		<!-- Bootstrap 3.3.7 -->
+		<link rel="stylesheet" href="/plugins/bootstrap/css/bootstrap.min.css">
+        <!-- 引入header-file -->
+        <th:block th:replace="admin/component/booklistheader::header-file"></th:block>
+
+	</head>
+
+	<body>
+
+		<div class="container">
+			<div class="row clearfix">
+				<div class="col-md-12 column">
+
+                    <!-- 引入页面头header-fragment -->
+                    <div th:replace="admin/component/booklistheader::header-nav"></div>
+
+				</div>
+			</div>
+
+            <div class="row">
+
+                <div class="col-md-12 "  >
+
+                    <!-- 页面数据 -->
+                    <th:block th:if="${null != BookPageResult.list}">
+                        <th:block th:each="book : ${BookPageResult.list}">
+
+                            <a th:href="@{'/admin/book/' + ${book.b_id}}" style="display: block;">
+                            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6">
+                                <div class="thumbnail">
+                                    <img th:src="@{${book.image_uri}}" alt=""  class="img-responsive" style="width: 180px;height:180px">
+
+                                    <div class="caption">
+                                        <h3 style="color: red; font-weight: bold;">
+                                            ￥<th:block th:text="${book.curr_price}"></th:block>
+                                        </h3>
+                                        <h4>
+                                            <th:block th:text="${book.b_name}"></th:block>
+                                        </h4>
+                                        <p>
+                                            作者：<th:block th:text="${book.author}"></th:block>
+                                        </p>
+                                        <p > 出版社：<th:block th:text="${book.press}"></th:block></p>
+                                        <p > 出版时间：<th:block th:text="${#dates.format(book.publish_time,'yyyy-MM-dd')}"></th:block> </p>
+
+                                    </div>
+                                </div>
+                            </div>
+                            </a>
+                        </th:block>
+                    </th:block>
+
+                </div>
+
+                </div> <!--end row-->
+
+            <div class="row">
+                <div class="col-md-3"></div>
+                <div class="col-md-9">
+
+                    <!--分页按钮-->
+                    <th:block th:if="${null != BookPageResult}">
+                        <ul class="pagination">
+                            <!--disabled是禁用状态   active是选中状态-->
+                            <li  th:class="${BookPageResult.currPage==1}?'disabled' : ' '" >
+                                <a th:href="@{${BookPageResult.currPage==1}?'##':'/' + ${pageUrl} + ${BookPageResult.currPage-1}}" aria-label="Previous">
+                                    <span aria-hidden="true">&laquo;</span>
+                                </a>
+                            </li>
+                            <th:block th:if="${BookPageResult.totalPage>=4 && BookPageResult.currPage>=4 }" >
+                                <li class="">
+                                    <a th:href="@{'/' + ${pageUrl} + ${BookPageResult.currPage-3}}"  th:text="${BookPageResult.currPage-3} " >
+                                        1
+                                    </a>
+                                </li>
+                            </th:block>
+                            <!--&lt;!&ndash;如果页数大于等于3，并且总页数不少于3&ndash;&gt;-->
+                            <th:block th:if="${BookPageResult.totalPage>=3 && BookPageResult.currPage>=3 }" >
+                                <li class="">
+                                    <a th:href="@{'/' + ${pageUrl} + ${BookPageResult.currPage-2}}"  th:text="${BookPageResult.currPage-2} " >
+                                        1
+                                    </a>
+                                </li>
+                            </th:block>
+                            <th:block th:if="${BookPageResult.totalPage>=2 && BookPageResult.currPage>=2 } ">
+                                <li class="">
+                                    <a th:href="@{'/' + ${pageUrl} + ${BookPageResult.currPage-1}}"  th:text="${BookPageResult.currPage-1 }">
+                                        2
+                                    </a>
+                                </li>
+                            </th:block>
+                            <li class="active">
+                                <a  th:href="@{'/' + ${pageUrl} + ${BookPageResult.currPage}}"  th:text="${BookPageResult.currPage }" >
+                                    3
+                                </a>
+                            </li>
+                            <!--th:if="${(BookPageResult.totalPage - BookPageResult.currPage) >=2 } "-->
+                            <th:block  th:if="${(BookPageResult.totalPage - BookPageResult.currPage) >=1 }" >
+                                <li class="">
+                                    <a th:href="@{'/' + ${pageUrl} + ${BookPageResult.currPage+1}}"  th:text="${BookPageResult.currPage+1 } " >
+                                        1
+                                    </a>
+                                </li>
+                            </th:block>
+                            <th:block  th:if="${(BookPageResult.totalPage - BookPageResult.currPage) >=2 }" >
+                                <li class="">
+                                    <a th:href="@{'/' + ${pageUrl} + ${BookPageResult.currPage+2}}"  th:text="${BookPageResult.currPage+2 } " >
+                                        1
+                                    </a>
+                                </li>
+                            </th:block>
+                            <th:block  th:if="${(BookPageResult.totalPage - BookPageResult.currPage) >=3 }" >
+                                <li class="">
+                                    <a th:href="@{'/' + ${pageUrl} + ${BookPageResult.currPage+3}}"  th:text="${BookPageResult.currPage+3 } " >
+                                        7
+                                    </a>
+                                </li>
+                            </th:block>
+                            <li th:class="${BookPageResult.currPage==BookPageResult.totalPage}?'disabled' : ''" >
+                                <a  th:href="@{${BookPageResult.currPage==BookPageResult.totalPage}?'##' : '/' + ${pageUrl} + ${BookPageResult.currPage+1}}" aria-label="Previous">
+                                    <span aria-hidden="true">&raquo;</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </th:block>
+                    <!--end 分页按钮-->
+                </div>
+
+            </div>  <!--end row-->
+
+        </div>
+
+        <!-- jQuery 3 -->
+        <script src="/jquery/jquery.min.js"></script>
+        <!-- Bootstrap 3.3.7 -->
+        <script src="/plugins/bootstrap/js/bootstrap.min.js"></script>
+
+		<script>
+
+            $(document).ready(function (){
+                proSearch();
+            });
+
+		</script>
+
+	</body>
+
+</html>

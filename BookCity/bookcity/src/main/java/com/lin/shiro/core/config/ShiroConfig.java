@@ -78,7 +78,8 @@ public class ShiroConfig {
 
             filterChainDefinitionMap.put("/role/**" , "authc");
             filterChainDefinitionMap.put("/api/**", "authc");
-            filterChainDefinitionMap.put("/admin/**", "authc");
+            filterChainDefinitionMap.put("/admin/**", "anon");
+//            filterChainDefinitionMap.put("/admin/**", "authc");
             filterChainDefinitionMap.put("/user/**", "authc");
             //主要这行代码必须放在所有权限设置的最后，不然会导致所有 url 都被拦截 剩余的都需要认证
             filterChainDefinitionMap.put("/**", "authc");

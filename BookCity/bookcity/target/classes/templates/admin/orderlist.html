@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>OrderList</title>
+
+    <!-- Bootstrap 3.3.7 -->
+    <link rel="stylesheet" href="/plugins/bootstrap/css/bootstrap.min.css">
+    <!-- 引入header-file -->
+    <th:block th:replace="admin/component/booklistheader::header-file"></th:block>
+    <!-- jQuery 3 -->
+    <script src="/jquery/jquery.min.js"></script>
+    <!-- Bootstrap 3.3.7 -->
+    <script src="/plugins/bootstrap/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+
+<div class="container">
+    <div class="row clearfix">
+        <div class="col-md-12 column">
+            <!-- 引入页面头header-fragment -->
+            <div th:replace="admin/component/booklistheader::header-nav"></div>
+
+        </div>
+    </div>
+
+
+
+    <div class="table-responsive m-t">
+        <table class="table invoice-table">
+            <thead>
+            <tr>
+                <th style="width: 350px;">  商品信息</th>
+                <th style="width: 120px;">金额</th>
+                <th style="width: 120px;">订单状态</th>
+                <th style="width: 120px;">操作</th>
+            </tr>
+            </thead>
+
+            <tbody>
+
+            <th:block th:if="${null != orderList}">
+                <th:block th:each="order : ${orderList}">
+            <tr style="background: #e3e3e3;">
+                <td>
+                    订单号: <th:block th:text="${order.o_number}"></th:block>
+                </td>
+                <td>
+                    下单时间:<th:block th:text="${#dates.format(order.order_time,'yyyy-MM-dd HH:mm:ss')}"></th:block>
+                </td>
+                <td></td>
+                <td></td>
+            </tr>
+
+            <tr>
+
+                <td>
+                    <img src="/demo/img/1.png" alt=""  class="img-responsive" style="width: 100px;height: 100px;">
+                </td>
+
+                <td style="font-size: 20px;color: red;font-weight: bold;width: 200px;">
+                    <div style="margin-top: 43px;">&yen;<th:block th:text="${order.total}"></th:block></div>
+                </td>
+
+                <td>
+                    <div style="margin-top: 43px;">
+                        <strong>
+                            <th:block th:if="${ order.status == 0 }">
+                                已付款
+                            </th:block>
+                            <th:block th:if="${ order.status == 1 }">
+                                等待付款
+                            </th:block>
+
+
+                        </strong>
+                    </div>
+                </td>
+
+                <td >
+                    <div style="width: 100%; margin-top: 10px;">
+                        <a th:href="@{'/admin/user/order/oid?order=' + ${order.o_id}}"  style="width: 100%;display: block;">查看</a>
+                        <th:block th:if="${ order.status == 1 }">
+                        <a href="#" style="width: 100%;display: block;">
+                            支付
+                        </a>
+                        </th:block>
+
+                        <th:block th:if="${ order.status == 0 }">
+                        <a href="#" style="width: 100%;display: block;">
+                            确认收货
+                        </a>
+                        </th:block>
+
+                        <th:block th:if="${ order.status == 1 }">
+                            <a href="#" style="width: 100%;display: block;">
+                                取消
+                            </a>
+                        </th:block>
+
+                        <th:block th:if="${ order.status == 0 }">
+                            <a href="#" style="width: 100%;display: block;">
+                                退货
+                            </a>
+                        </th:block>
+
+                    </div>
+                </td>
+            </tr>
+
+                </th:block>
+            </th:block>
+
+            </tbody>
+        </table>
+    </div>
+
+
+    <div class="well m-t" style="margin-top: 20px;"><strong>注意：</strong> 请在30日内完成付款，否则订单会自动取消。
+    </div>
+</div>
+
+
+</div>
+
+<script>
+
+    $(document).ready(function (){
+        proSearch();
+    });
+</script>
+
+
+</body>
+</html>
+
+
